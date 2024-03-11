@@ -1,0 +1,75 @@
+/*@font-face {*/
+/*    font-family: 'Bai Jamjuree';*/
+/*    src: url("../../environment-jimebillie/font/baijamjuree/BaiJamjuree-Regular.ttf");*/
+/*}*/
+*{
+    font-family:sans-serif;
+}
+.login-bg-fixed {
+    position: fixed;
+    display: flex;
+    width: 100%;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+}
+
+.login-bg-fixed > .wrap-image-cover-pc > #wrap-tag-image1 {
+    width: 100%;
+    height: 100%;
+}
+
+.login-bg-fixed > .wrap-image-cover-pc > #wrap-tag-image1 > img {
+    object-position: center;
+    object-fit: cover;
+    width: 100%;
+    height: 100%;
+}
+
+.login-bg-fixed > .wrap-panel-login {
+    position: relative;
+}
+
+.login-bg-fixed > .wrap-panel-login > #wrap-tag-image2 {
+    width: 100%;
+    height: 100%;
+}
+
+.login-bg-fixed > .wrap-panel-login > #wrap-tag-image2 > img {
+    object-position: center;
+    object-fit: cover;
+    width: 100%;
+    height: 100%;
+}
+
+.login-bg-fixed > .wrap-panel-login > .wrap-content-login {
+    position: absolute;
+    display: flex;
+    align-items: center;
+    width: 100%;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+}
+@media screen and (max-width: 768px) {
+    .login-bg-fixed > .wrap-panel-login > .wrap-content-login {
+        background-color: rgba(255, 255, 255, 0.7);
+    }
+}
+.login-bg-fixed > .wrap-panel-login > .wrap-content-login>.content-login-center{
+    width: 100%;
+    padding: 30px;
+}
+
+#wrap-password>.wrap-eye-password{
+    position: absolute;
+    top:18px;
+    right: 10px;
+    cursor: pointer;
+}
+
+
+
+

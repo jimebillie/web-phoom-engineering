@@ -1,0 +1,105 @@
+@charset "utf-8";
+@media screen and (max-width: 480px) {
+.header {
+	float: left;
+	width: 100%;
+	height: auto;
+	background-color: #FFF;
+}
+.logo {
+	float: left;
+	height: auto;
+	width: 100%;
+	border-right-width: 0px;
+	margin-left: 0%;
+	border-bottom-width: 1px;
+	border-bottom-style: solid;
+	border-bottom-color: #CCC;
+	text-align: left;
+	margin-bottom: 2%;
+}
+.logo img {
+	height: auto;
+	width: 50%;
+}
+
+.box-menu {
+	float: left;
+	height: auto;
+	width: 40%;
+	margin-left: 5%;
+	margin-top: 0px;
+	position: relative;
+	visibility: visible;
+	z-index: 999;
+	padding-bottom: 10px;
+}
+.box-contact-top {
+	float: right;
+	width: 50%;
+	margin-top: 0%;
+	height: auto;
+	border-left-width: 0px;
+	border-left-style: solid;
+	border-left-color: #CCC;
+	padding-top: 0%;
+	padding-bottom: 2%;
+}
+.contact-top-tel {
+	background-image: url(../images/icon-top-tel.jpg);
+	background-repeat: no-repeat;
+	background-position: left center;
+	float: right;
+	height: auto;
+	width: 80%;
+	padding-left: 20%;
+	font-family: serithairegular;
+	font-size: 4vw;
+	padding-top: 3%;
+	padding-bottom: 3%;
+	margin-right: 0px;
+	font-weight: bold;
+	background-size:5vw;
+}
+.contact-top-line {
+	background-image: url(../images/icon-top-line.jpg);
+	background-repeat: no-repeat;
+	background-position: left center;
+	float: right;
+	height: auto;
+	width: 80%;
+	padding-left: 20%;
+	font-family: serithairegular;
+	font-size: 4vw;
+	padding-top: 3%;
+	padding-bottom: 3%;
+	margin-right: 0px;
+	font-weight: bold;
+	background-size:5vw;
+}
+.contact-top-all {
+	float: left;
+	height: auto;
+	width: 100%;
+	margin-left: 0%;
+}
+.contact-top-all img {
+	margin-right: 5%;
+	height: auto;
+	width: 17%;
+}
+.banner {
+	float: left;
+	height: auto;
+	width: 100%;
+	display: none;
+}
+.banner-m {
+	float: left;
+	height: auto;
+	width: 100%;
+	}
+.banner #slippry-slider .demo_block #demo2 li img {
+	height: 100%;
+}
+}

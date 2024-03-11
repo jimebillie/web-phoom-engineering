@@ -1,0 +1,110 @@
+
+.Wrap-BG-All-Gallery {
+    position: fixed;
+    z-index: 10000;
+    width: 100%;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.99);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+}
+
+.Wrap-BG-All-Gallery > .Wrap-btn-Close-Gallery {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    width: 30px;
+    height: 30px;
+    border-radius: 50px;
+    background-color: gray;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    z-index: 10001;
+    box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.3);
+}
+
+.Wrap-btn-Close-Gallery > span {
+    width: 15px;
+    height: 2px;
+    border-radius: 10px;
+    background-color: gainsboro;
+}
+
+.Wrap-btn-Close-Gallery > span:nth-child(1) {
+    transform: rotate(-45deg);
+    position: absolute;
+
+}
+
+.Wrap-btn-Close-Gallery > span:nth-child(2) {
+    transform: rotate(45deg);
+    position: absolute;
+}
+
+.Wrap-Now-Image-Gallery {
+    height: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+.Wrap-Now-Image-Gallery > img {
+    height: 100%;
+}
+
+
+.Wrap-BG-All-Gallery > .Wrap-Bar-Other-image {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    background-color: rgba(0, 0, 0, 0.9);
+    box-shadow: 1px 1px 1px rgba(0, 0, 0, 0.3);
+    display: flex;
+    flex-direction: column;
+    overflow-x: auto;
+    overflow-y: hidden;
+    opacity: 0.2;
+    transition: 0.3s;
+    color: white;
+}
+
+.Wrap-BG-All-Gallery > .Wrap-Bar-Other-image._hover {
+    opacity: 1;
+    animation-name: Bar-Other-image;
+    animation-delay: 5s;
+}
+
+.Wrap-BG-All-Gallery > .Wrap-Bar-Other-image._leave {
+    opacity: 0.2;
+}
+
+
+.Wrap-BG-All-Gallery > .Wrap-Bar-Other-image > .Wrap-Other-Image > img {
+    margin: 5px;
+    border: 2px solid gray;
+    cursor: pointer;
+    width: 30px;
+    height: 30px;
+    object-fit: cover;
+    object-position: center;
+    transition: 0.3s;
+}
+
+.Wrap-BG-All-Gallery > .Wrap-Bar-Other-image > .Wrap-Name-Gallery {
+    margin: 5px;
+    font-size: 10px;
+}
+
+.Wrap-BG-All-Gallery > .Wrap-Bar-Other-image > .Wrap-Other-Image > img:hover {
+    transform: scale(1.19);
+}
+
+
+
+

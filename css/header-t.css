@@ -1,0 +1,93 @@
+@charset "utf-8";
+@media screen and (min-width: 481px) and (max-width: 1040px){
+.header {
+	float: left;
+	width: 100%;
+	height: auto;
+	background-color: #FFF;
+}
+.logo {
+	float: left;
+	height: auto;
+	width: 30%;
+	margin-right: 5%;
+	border-right-width: 1px;
+	border-right-style: solid;
+	border-right-color: #CCC;
+}
+.logo img {
+	height: auto;
+	width: 100%;
+}
+
+.box-menu {
+	float: left;
+	height: auto;
+	width: 40%;
+	margin-top: 4%;
+	margin-left: 2%;
+}
+.box-contact-top {
+	float: right;
+	width: 20%;
+	margin-top: 0%;
+	height: 100%;
+	border-left-width: 1px;
+	border-left-style: solid;
+	border-left-color: #CCC;
+	padding-top: 2%;
+	padding-bottom: 2%;
+}
+.contact-top-tel {
+	background-image: url(../images/icon-top-tel.jpg);
+	background-repeat: no-repeat;
+	background-position: left center;
+	float: right;
+	height: auto;
+	width: 80%;
+	padding-left: 15%;
+	font-family: serithairegular;
+	font-size: 1vw;
+	padding-top: 3%;
+	padding-bottom: 3%;
+	margin-right: 0px;
+	font-weight: bold;
+	background-size:2vw;
+}
+.contact-top-line {
+	background-image: url(../images/icon-top-line.jpg);
+	background-repeat: no-repeat;
+	background-position: left center;
+	float: right;
+	height: auto;
+	width: 80%;
+	padding-left: 15%;
+	font-family: serithairegular;
+	font-size: 1vw;
+	padding-top: 3%;
+	padding-bottom: 3%;
+	margin-right: 0px;
+	font-weight: bold;
+	background-size:2vw;
+}
+.contact-top-all {
+	float: left;
+	height: auto;
+	width: 80%;
+	margin-left: 15%;
+}
+.contact-top-all img {
+	margin-right: 10%;
+}
+.banner {
+	float: left;
+	height: auto;
+	width: 100%;
+}
+.banner-m {
+	float: left;
+	height: auto;
+	width: 100%;
+	display: none;
+}
+}

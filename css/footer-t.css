@@ -1,0 +1,124 @@
+@charset "utf-8";
+@media screen and (min-width: 481px) and (max-width: 1040px){
+.footer {
+	float: left;
+	height: auto;
+	width: 100%;
+}
+.box-footer-top {
+	background-color: #40495a;
+	float: left;
+	height: auto;
+	width: 100%;
+	padding-top: 3%;
+	padding-bottom: 3%;
+}
+
+.box-footer-left {
+	float: left;
+	width: 20%;
+	height: auto;
+}
+.box-footer-center {
+	float: left;
+	height: auto;
+	width: 50%;
+}
+.box-footer-right {
+	float: right;
+	height: auto;
+	width: 20%;
+}
+
+
+.title-footer {
+	font-family: serithairegular;
+	font-size: 1vw;
+	color: #0e8fab;
+	margin-bottom: 5%;
+}
+.menu-footer {
+	font-family: serithairegular;
+	font-size: 1vw;
+	color: #FFF;
+	float: left;
+	height: auto;
+	width: 100%;
+	line-height: 1.4vw;
+}
+.menu-footer a {
+	color: #FFF;
+	text-decoration: none;
+}
+
+.contact-footer-01 {
+	float: left;
+	height: auto;
+	width: 30%;
+	font-family: serithairegular;
+	font-size: 1vw;
+	color: #FFF;
+	background-image: url(../images/icon-footer-01.jpg);
+	background-repeat: no-repeat;
+	background-position: left center;
+	padding-left: 7%;
+	padding-top: 2%;
+	padding-bottom: 2%;
+	background-size: 15%;
+}
+.contact-footer-01 a {
+	color: #FFF;
+	text-decoration: none;
+}
+.contact-footer-02 {
+	float: left;
+	height: auto;
+	width: 30%;
+	font-family: serithairegular;
+	font-size: 1vw;
+	color: #FFF;
+	background-image: url(../images/icon-footer-02.jpg);
+	background-repeat: no-repeat;
+	background-position: left center;
+	padding-left: 7%;
+	padding-top: 2%;
+	padding-bottom: 2%;
+	background-size: 15%;
+}
+.contact-footer-03 {
+	float: left;
+	height: auto;
+	width: 90%;
+	font-family: serithairegular;
+	font-size: 1vw;
+	color: #FFF;
+	background-image: url(../images/icon-footer-03.jpg);
+	background-repeat: no-repeat;
+	background-position: left center;
+	padding-left: 7%;
+	padding-top: 2%;
+	padding-bottom: 2%;
+	background-size: 5.5%;
+}
+.icon-footer {
+	float: left;
+	height: auto;
+	width: 100%;
+}
+.icon-footer img {
+	margin-right: 5%;
+	height: auto;
+	width: 20%;
+}
+.copy {
+	font-family: serithairegular;
+	color: #636e80;
+	float: left;
+	height: auto;
+	width: 100%;
+	font-size: 1vw;
+	text-align: center;
+	padding-top: 2%;
+	padding-bottom: 2%;
+}
+}
