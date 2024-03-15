@@ -209,7 +209,7 @@ class gypsumplant
                 if (file_exists(dirname(__DIR__, 2) . "/upload/" . $r["img"])) {
                     unlink(dirname(__DIR__, 2) . "/upload/" . $r["img"]);
                 }
-                if ($r["img_other"] != "no"){
+                if ($r["img_other"] != "no") {
                     $img_other = explode(",", $r["img_other"]);
                     foreach ($img_other as $r2) {
                         if (file_exists(dirname(__DIR__, 2) . "/upload/" . $r2)) {
@@ -226,5 +226,17 @@ class gypsumplant
             http_response_code(400);
             echo json_encode(["status" => 400, "msg" => "Fail"]);
         }
+    }
+
+    function get3itemForIndex()
+    {
+        $stmt = $this->db->prepare("SELECT * FROM `gypsumplant` ORDER BY `id` DESC LIMIT 3");
+        $stmt->execute();
+        $res = $stmt->get_result();
+        $data = [];
+        foreach ($res as $row) {
+            array_push($data, ["id" => $row['id'], "name_plant" => $row['name_plant'], "img" => $row['img']]);
+        }
+        echo json_encode($data);
     }
 }

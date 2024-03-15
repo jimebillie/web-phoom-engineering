@@ -6,7 +6,7 @@ $controller = new project();
 if (isset($_POST['api'])) {
     switch ($_POST['api']) {
         case "save_main":
-            $controller->save_main($_POST['name_project'], $_POST['year'],$_FILES['img'], $_POST['detail']);
+            $controller->save_main($_POST['name_project'], $_POST['year'], $_FILES['img'], $_POST['detail']);
             break;
         case "show_main":
             $controller->show_main();
@@ -28,6 +28,9 @@ if (isset($_POST['api'])) {
             break;
         case "del_main":
             $controller->del_main($_POST['id']);
+            break;
+        case "get3itemForIndex":
+            $controller->get3itemForIndex();
             break;
     }
 } else {

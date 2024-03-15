@@ -42,10 +42,12 @@
         const api = await fetch("back-office/backend/api/contact.php", {method: "post", body: formData});
         const res = await api.json();
         res.map((v, i) => {
+
             document.querySelector(".contact-footer-01 > a").href = "tel:" + v.f1
             document.querySelector(".contact-footer-01 > a").innerHTML = v.f1
             document.querySelector(".contact-footer-02").innerHTML = v.f2
             document.querySelector(".contact-footer-03").innerHTML = v.f3
+
             document.querySelectorAll(".icon-footer > a")[0].href = v.f5
             document.querySelectorAll(".icon-footer > a")[1].href = v.f7
             document.querySelectorAll(".icon-footer > a")[1].href = v.f9

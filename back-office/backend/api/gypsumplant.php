@@ -29,6 +29,9 @@ if (isset($_POST['api'])) {
         case "del_main":
             $controller->del_main($_POST['id']);
             break;
+        case "get3itemForIndex":
+            $controller->get3itemForIndex();
+            break;
     }
 } else {
     http_response_code(400);

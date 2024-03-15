@@ -56,7 +56,7 @@
                 <div class="title-about-home">ABOUT OUR
                     COMPANY
                 </div>
-                <div class="year-about-home">Establish 1 October 2003
+                <div class="year-about-home" id="api_title_abu">
                 </div>
                 <div class="text-about-home">We are specialist in electrical and automation.<br/>
                 </div>
@@ -70,15 +70,15 @@
             <div class="box-about-home-right">
                 <div class="title-highlights">Gypsum plant specialist.
                 </div>
-                <div class="text-highlights-01">Gypsum plant know how from world class.
+                <div class="text-highlights-01" id="gps1">
                 </div>
-                <div class="text-highlights-01">World class Gypsum machine installation and maintenance.
+                <div class="text-highlights-01" id="gps2">
                 </div>
-                <div class="text-highlights-01">Gypsum plant process/electrical/Automation/mechanical design.
+                <div class="text-highlights-01" id="gps3">
                 </div>
-                <div class="text-highlights-01">Process and machine problem analyze and solving.
+                <div class="text-highlights-01" id="gps4">
                 </div>
-                <div class="text-highlights-01">Long time experience in many Gypsum plant world wide.
+                <div class="text-highlights-01" id="gps5">
 
                 </div>
 
@@ -105,29 +105,6 @@
             <div class="sub-project" id="edt_gypsum">
             </div>
             <div class="box-project-list-00">
-                <div class="box-project-list-01">
-                    <div class="picture-project-list-01"><a href="gypsumplant-detail.php"><img
-                                    src="images/picture-plant-01.jpg" width="425" height="315"/></a></div>
-                    <div class="name-project-list-02"><a href="gypsumplant-detail.php">Brazil</a></div>
-
-
-                </div>
-
-                <div class="box-project-list-01">
-                    <div class="picture-project-list-01"><a href="gypsumplant-detail.php"><img
-                                    src="images/picture-plant-02.jpg" width="425" height="315"/></a></div>
-                    <div class="name-project-list-02"><a href="gypsumplant-detail.php">India1</a></div>
-
-
-                </div>
-                <div class="box-project-list-01">
-                    <div class="picture-project-list-01"><a href="gypsumplant-detail.php"><img
-                                    src="images/picture-plant-03.jpg" width="425" height="315"/></a></div>
-                    <div class="name-project-list-02"><a href="gypsumplant-detail.php">India2</a></div>
-
-
-                </div>
-
 
             </div>
             <div class="bnt-more-02"><a href="gypsumplant.php">READ MORE</a></div>
@@ -138,34 +115,9 @@
     <div class="box-project-home">
         <div class="box-main">
             <div class="title-project">PROJECT</div>
-            <div class="sub-project" id="edt_project">
+            <div class="sub-project" id="edt_project" style="margin-bottom: 10px">
             </div>
-            <div class="box-project-list-00">
-                <div class="box-project-list-01">
-                    <div class="picture-project-list-01"><a href="project-detail.php"><img
-                                    src="images/picture-project-01.jpg" width="425" height="315"/></a></div>
-                    <div class="name-project-list-01">Project</div>
-                    <div class="year-project-list-01"><a href="project-detail.php">2024</a></div>
-
-
-                </div>
-                <div class="box-project-list-01">
-                    <div class="picture-project-list-01"><a href="project-detail.php"><img
-                                    src="images/picture-project-02.jpg" width="425" height="315"/></a></div>
-                    <div class="name-project-list-01">Project</div>
-                    <div class="year-project-list-01"><a href="project-detail.php">2023</a></div>
-
-
-                </div>
-                <div class="box-project-list-01">
-                    <div class="picture-project-list-01"><a href="project-detail.php"><img
-                                    src="images/picture-project-03.jpg" width="425" height="315"/></a></div>
-                    <div class="name-project-list-01">Project</div>
-                    <div class="year-project-list-01"><a href="project-detail.php">2022</a></div>
-
-
-                </div>
-
+            <div class="box-project-list-00"  id="api_project">
 
             </div>
             <div class="bnt-more-02"><a href="project.php">READ MORE</a></div>
@@ -183,19 +135,93 @@
         const api = await fetch("back-office/backend/api/home/show_about_gypsum_plant.php", {method: "post"});
         const res = await api.json();
         if (res.status === 200) {
-            document.getElementById("edt_gypsum").innerHTML=res.data;
+            document.getElementById("edt_gypsum").innerHTML = res.data;
         }
     }
     callApiShowAboutHomeGypsumPlant();
+
+    async function callApiShowGypsumPlant3item() {
+        const formData = new FormData();
+        formData.append("api", "get3itemForIndex");
+        const api = await fetch("back-office/backend/api/gypsumplant.php", {method: "post", body: formData});
+        const res = await api.json();
+        if (res.length > 0) {
+            res.map((v, i) => {
+                const box_project_list_01 = document.createElement("div");
+                const picture_project_list_01 = document.createElement("div");
+                const name_project_list_02 = document.createElement("div");
+                const aT = document.createElement("a");
+                const aB = document.createElement("a");
+                const img = document.createElement("img");
+                box_project_list_01.classList.add("box-project-list-01");
+                picture_project_list_01.classList.add("picture-project-list-01");
+                aT.href = "gypsumplant-detail.php?id=" + v.id;
+                img.src = "back-office/upload/" + v.img;
+                img.setAttribute("width", "425");
+                img.setAttribute("height", "315");
+                name_project_list_02.classList.add("name-project-list-02");
+                aB.href = "gypsumplant-detail.php?id=" + v.id;
+                aB.textContent = v.name_plant
+                document.querySelector(".box-project-list-00").appendChild(box_project_list_01);
+                box_project_list_01.appendChild(picture_project_list_01);
+                picture_project_list_01.appendChild(aT);
+                aT.appendChild(img);
+                box_project_list_01.appendChild(name_project_list_02);
+                name_project_list_02.appendChild(aB);
+            })
+        }
+    }
+
+    callApiShowGypsumPlant3item();
+
+    async function callApiShowProject3item() {
+        const formData = new FormData();
+        formData.append("api", "get3itemForIndex");
+        const api = await fetch("back-office/backend/api/project.php", {method: "post", body: formData});
+        const res = await api.json();
+        if (res.length > 0) {
+            res.map((v, i) => {
+                const box_project_list_01 = document.createElement("div");
+                const picture_project_list_01 = document.createElement("div");
+                const name_project_list_01 = document.createElement("div");
+                const year_project_list_01 = document.createElement("div");
+                const aT = document.createElement("a");
+                const aB = document.createElement("a");
+                const img = document.createElement("img");
+                box_project_list_01.classList.add("box-project-list-01");
+                picture_project_list_01.classList.add("picture-project-list-01");
+                aT.href = "project-detail.php?id=" + v.id;
+                img.src = "back-office/upload/" + v.img;
+                img.setAttribute("width", "425");
+                img.setAttribute("height", "315");
+                name_project_list_01.classList.add("name-project-list-01");
+                name_project_list_01.textContent = v.name_project;
+                aB.href = "project-detail.php?id=" + v.id;
+                aB.textContent = v.year;
+                year_project_list_01.classList.add("year-project-list-01");
+                document.getElementById("api_project").appendChild(box_project_list_01);
+                box_project_list_01.appendChild(picture_project_list_01);
+                picture_project_list_01.appendChild(aT);
+                aT.appendChild(img);
+                box_project_list_01.appendChild(name_project_list_01);
+                box_project_list_01.appendChild(year_project_list_01);
+                name_project_list_01.appendChild(aB);
+                year_project_list_01.appendChild(aB);
+            })
+        }
+    }
+
+    callApiShowProject3item();
 
 
     async function callApiShowAboutHomeProject() {
         const api = await fetch("back-office/backend/api/home/show_about_project.php", {method: "post"});
         const res = await api.json();
         if (res.status === 200) {
-            document.getElementById("edt_project").innerHTML=res.data;
+            document.getElementById("edt_project").innerHTML = res.data;
         }
     }
+
     callApiShowAboutHomeProject();
 
 
@@ -237,7 +263,13 @@
         const api = await fetch("back-office/backend/api/home/show_about_company.php", {method: "post"});
         const res = await api.json();
         if (res.status === 200) {
+            document.querySelector("#api_title_abu").textContent = res.title;
             document.querySelector(".text-about-home").innerHTML = res.data;
+            document.querySelector("#gps1").textContent = res.gps1;
+            document.querySelector("#gps2").textContent = res.gps2;
+            document.querySelector("#gps3").textContent = res.gps3;
+            document.querySelector("#gps4").textContent = res.gps4;
+            document.querySelector("#gps5").textContent = res.gps5;
         }
     }
 

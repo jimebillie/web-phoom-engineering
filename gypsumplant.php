@@ -32,7 +32,8 @@
     <div class="line-top"></div>
     <div class="box-main">
         <div class="title-all">GYPSUM PLANT</div>
-        <div class="sub-project">We are Gypsum plant specialist.</div>
+        <div class="sub-project" id="edt_gypsum">
+        </div>
         <div class="box-project-list-00">
 
         </div>
@@ -77,8 +78,18 @@
 
         }
     }
-
     callGypsum();
+
+    async function callApiShowAboutHomeGypsumPlant() {
+        const api = await fetch("back-office/backend/api/home/show_about_gypsum_plant.php", {method: "post"});
+        const res = await api.json();
+        if (res.status === 200) {
+            document.getElementById("edt_gypsum").innerHTML = res.data;
+        }
+    }
+    callApiShowAboutHomeGypsumPlant();
+
+
     $(function () {
         var demo1 = $("#demo1").slippry({
             // transition: 'fade',

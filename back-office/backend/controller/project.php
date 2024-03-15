@@ -227,4 +227,15 @@ class project
             echo json_encode(["status" => 400, "msg" => "Fail"]);
         }
     }
+    function get3itemForIndex()
+    {
+        $stmt = $this->db->prepare("SELECT * FROM `project` ORDER BY `id` DESC LIMIT 3");
+        $stmt->execute();
+        $res = $stmt->get_result();
+        $data = [];
+        foreach ($res as $row) {
+            array_push($data, ["id" => $row['id'], "name_project" => $row['name_project'], "year" => $row['year'], "img" => $row['img']]);
+        }
+        echo json_encode($data);
+    }
 }

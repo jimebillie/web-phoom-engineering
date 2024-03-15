@@ -32,11 +32,9 @@
     <div class="line-top"></div>
     <div class="box-main">
         <div class="title-all">PROJECT</div>
-        <div class="sub-project">Our company provides first-class solutions for public and private sector organizations
-            worldwide.
+        <div class="sub-project" id="edt_project">
         </div>
         <div class="box-project-list-00">
-
 
         </div>
 
@@ -64,13 +62,13 @@
                 const img = document.createElement("img");
                 box_project_list_01.classList.add("box-project-list-01");
                 picture_project_list_01.classList.add("picture-project-list-01");
-                aT.href = "project-detail.php?id="+v.id;
-                img.src = "back-office/upload/"+v.img;
+                aT.href = "project-detail.php?id=" + v.id;
+                img.src = "back-office/upload/" + v.img;
                 img.setAttribute("width", "425");
                 img.setAttribute("height", "315");
                 name_project_list_01.classList.add("name-project-list-01");
-                name_project_list_01.textContent=v.name_project;
-                aB.href = "project-detail.php?id="+v.id;
+                name_project_list_01.textContent = v.name_project;
+                aB.href = "project-detail.php?id=" + v.id;
                 aB.textContent = v.year;
                 year_project_list_01.classList.add("year-project-list-01");
                 document.querySelector(".box-project-list-00").appendChild(box_project_list_01);
@@ -87,6 +85,19 @@
     }
 
     callProject();
+
+
+    async function callApiShowAboutHomeProject() {
+        const api = await fetch("back-office/backend/api/home/show_about_project.php", {method: "post"});
+        const res = await api.json();
+        if (res.status === 200) {
+            document.getElementById("edt_project").innerHTML = res.data;
+        }
+    }
+
+    callApiShowAboutHomeProject();
+
+
     $(function () {
         var demo1 = $("#demo1").slippry({
             // transition: 'fade',

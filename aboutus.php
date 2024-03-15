@@ -34,7 +34,7 @@
         <div class="title-all">ABOUT US</div>
         <div class="name-about">
             <div class="title-about">PHOOM ENGINEERING</div>
-            <div class="year-about">Establish 1 October 2003
+            <div class="year-about" id="edt_aboutus_title">
             </div>
 
         </div>
@@ -62,6 +62,15 @@
         }
 
         showAboutUs();
+
+        async function callTextAboutHome() {
+            const api = await fetch("back-office/backend/api/home/show_about_company.php", {method: "post"});
+            const res = await api.json();
+            if (res.status === 200) {
+                document.getElementById("edt_aboutus_title").textContent = res.title;
+            }
+        }
+        callTextAboutHome();
 
         $(function () {
             var demo1 = $("#demo1").slippry({

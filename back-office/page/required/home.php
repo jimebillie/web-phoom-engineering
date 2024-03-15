@@ -71,7 +71,27 @@
             <b>จัดการข้อมูลเกี่ยวกับบริษัทของเรา ในหน้าแรก</b>
         </div>
         <form id="form2">
+            <input id="form2title" class="form-control mb-2" type="text" required>
             <textarea id="summernote1" name="editordata"></textarea>
+            <p></p>
+            <b>⭐️ Gypsum plant specialist.</b>
+                <ul>
+                    <li>
+                        Specialist 1 : <input type="text" required class="form-control" id="gps1">
+                    </li>
+                    <li>
+                        Specialist 2 : <input type="text" required class="form-control" id="gps2">
+                    </li>
+                    <li>
+                        Specialist 3 : <input type="text" required class="form-control" id="gps3">
+                    </li>
+                    <li>
+                        Specialist 4 : <input type="text" required class="form-control" id="gps4">
+                    </li>
+                    <li>
+                        Specialist 5 : <input type="text" required class="form-control" id="gps5">
+                    </li>
+                </ul>
             <p></p>
             <button type="submit" class="btn btn-warning">
                 บันทึกการเปลี่ยนแปลง
@@ -437,7 +457,13 @@
         const api = await fetch("../backend/api/home/show_about_company.php", {method: "post"});
         const res = await api.json();
         if (res.status === 200) {
+            document.getElementById("form2title").value=res.title;
             $('#summernote1').summernote('code', res.data);
+            document.getElementById("gps1").value=res.gps1;
+            document.getElementById("gps2").value=res.gps2;
+            document.getElementById("gps3").value=res.gps3;
+            document.getElementById("gps4").value=res.gps4;
+            document.getElementById("gps5").value=res.gps5;
         }
     }
 
@@ -466,7 +492,13 @@
     document.getElementById("form2").addEventListener("submit", (e) => {
         e.preventDefault();
         const formData = new FormData;
+        formData.append("title", document.getElementById("form2title").value);
         formData.append("data", document.getElementById("summernote1").value);
+        formData.append("gps1", document.getElementById("gps1").value);
+        formData.append("gps2", document.getElementById("gps2").value);
+        formData.append("gps3", document.getElementById("gps3").value);
+        formData.append("gps4", document.getElementById("gps4").value);
+        formData.append("gps5", document.getElementById("gps5").value);
         callApiSaveAboutCompany(formData);
     });
 
